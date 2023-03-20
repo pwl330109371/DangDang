@@ -1,8 +1,8 @@
 /**
  * Author: pengwenlei pengwenlei@pengwenlei
  * Date: 2023-02-14 09:55:23
- * LastEditors: pengwenlei pengwenlei@pengwenlei
- * LastEditTime: 2023-02-20 15:32:42
+ * LastEditors: pengwenlei pwl330109371@gmail.com
+ * LastEditTime: 2023-03-20 14:34:57
  */
 import { defineConfig, CommonServerOptions } from "vite";
 import vue from "@vitejs/plugin-vue";
@@ -21,15 +21,15 @@ export default defineConfig((mode) => {
   const eveConf: DotenvParseOutput = dotenv.parse(envData);
   if (mode.mode === "development") {
     console.log("我是开发者环境");
-    server = {
-      host: eveConf.VITE_HOST,
-      port: Number(eveConf.VITE_PORT),
-      proxy: {
-        [eveConf.VITE_BASE_URL]: {
-          target: eveConf.VITE_PROXY_DOMAIN,
-        },
-      },
-    };
+    // server = {
+    //   host: eveConf.VITE_HOST,
+    //   port: Number(eveConf.VITE_PORT),
+    //   proxy: {
+    //     [eveConf.VITE_BASE_URL]: {
+    //       target: eveConf.VITE_PROXY_DOMAIN,
+    //     },
+    //   },
+    // };
   } else if (mode.mode === "production") {
     server = {
       host: eveConf.VITE_HOST,
